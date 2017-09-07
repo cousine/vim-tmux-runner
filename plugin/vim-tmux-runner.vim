@@ -54,7 +54,7 @@ function! s:ValidRunnerPaneSet()
 endfunction
 
 function! s:Speccie()
-  let s:runner_pane = "speccie:1"
+  let s:runner_pane = "speccie:1.0"
   echohl String | echo "\rRunner pane set to: " . s:runner_pane | echohl None
 endfunction
 
