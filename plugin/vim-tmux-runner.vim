@@ -46,11 +46,16 @@ function! s:ValidRunnerPaneSet()
         call s:EchoError("No runner pane attached.")
         return 0
     endif
-    if !s:ValidRunnerPaneNumber(s:runner_pane)
-        call s:EchoError("Runner pane setting (" . s:runner_pane . ") is invalid. Please reattach.")
-        return 0
-    endif
+    " if !s:ValidRunnerPaneNumber(s:runner_pane)
+    "     call s:EchoError("Runner pane setting (" . s:runner_pane . ") is invalid. Please reattach.")
+    "     return 0
+    " endif
     return 1
+endfunction
+
+function! s:Speccie()
+  let s:runner_pane = "speccie:1"
+  echohl String | echo "\rRunner pane set to: " . s:runner_pane | echohl None
 endfunction
 
 function! s:DetachedWindowOutOfSync()
@@ -454,6 +459,7 @@ function! s:DefineCommands()
     command! VtrFlushCommand call s:FlushCommand()
     command! VtrSendCtrlD call s:SendCtrlD()
     command! VtrAttachToPane call s:PromptForRunnerToAttach()
+    command! VtrSpeccie call s:Speccie()
 endfunction
 
 function! s:DefineKeymaps()
