@@ -411,7 +411,7 @@ endfunction
 
 function! s:SendCtrlC()
   if !s:ValidRunnerPaneSet() | return | endif
-  call s:SendKeys('\03')
+  call s:SendKeys('')
 endfunction
 
 function! s:SendFileViaVtr(ensure_pane)
