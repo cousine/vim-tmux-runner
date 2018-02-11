@@ -53,8 +53,8 @@ function! s:ValidRunnerPaneSet()
     return 1
 endfunction
 
-function! s:Speccie()
-  let s:runner_pane = "speccie:1.0"
+function! s:Cousine()
+  let s:runner_pane = "cousine-secondary:1.0"
   echohl String | echo "\rRunner pane set to: " . s:runner_pane | echohl None
 endfunction
 
@@ -459,7 +459,7 @@ function! s:DefineCommands()
     command! VtrFlushCommand call s:FlushCommand()
     command! VtrSendCtrlD call s:SendCtrlD()
     command! VtrAttachToPane call s:PromptForRunnerToAttach()
-    command! VtrSpeccie call s:Speccie()
+    command! VtrCousine call s:Cousine()
 endfunction
 
 function! s:DefineKeymaps()
