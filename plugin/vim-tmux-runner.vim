@@ -409,6 +409,11 @@ function! s:SendCtrlD()
   call s:SendKeys('')
 endfunction
 
+function! s:SendCtrlC()
+  if !s:ValidRunnerPaneSet() | return | endif
+  call s:SendKeys('\03')
+endfunction
+
 function! s:SendFileViaVtr(ensure_pane)
     let runners = s:CurrentFiletypeRunners()
     if has_key(runners, &filetype)
@@ -460,6 +465,7 @@ function! s:DefineCommands()
     command! VtrSendCtrlD call s:SendCtrlD()
     command! VtrAttachToPane call s:PromptForRunnerToAttach()
     command! VtrCousine call s:Cousine()
+    command! VtrSendCtrlC call s:SendCtrlC()
 endfunction
 
 function! s:DefineKeymaps()
